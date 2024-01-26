@@ -1,39 +1,33 @@
-# Présentation du BOT MAIL avec AppScript
-## Contexte
-Dans le cadre de la réhabilitation thermique de logement, nous sommes amenés à travailler avec de grand volume de données.
-L'opération Rénov' Makers vise à **réhabiliter 6000 logements en deux ans**. Les données thermiques de ces logements sont mises à jour grâce au DPE (diagnostic de performance énergétique). 
+# Presentation of the MAIL BOT with AppScript
+## Context
+In the context of the thermal rehabilitation of housing, we are required to work with a large volume of data.
+The Rénov' Makers operation aims to **rehabilitate 6000 homes in two years**. The thermal data of these homes are updated through the DPE (energy performance diagnosis).
 
-Ces DPE se présentent sous deux formes :
-- un format .pdf destiné aux particuliers
-- un format .xml destiné à l'exploitation des données (notamment à destination de l'[ADEME](https://observatoire-dpe-audit.ademe.fr/accueil))
+These DPEs come in two forms:
+- a .pdf format intended for individuals
+- a .xml format intended for data exploitation (especially for the [ADEME](https://observatoire-dpe-audit.ademe.fr/accueil))
 
-## Besoins
-L'intégration de ces données se faisaient manuellement jusqu'alors. Nous recevions un dossier contenant 150 DPE, ouvrions chaque DPE uns à uns pour extraire les information vers notre table d'information Google Sheet. 
-Cette tache bien que basique se révellait extremement chronophage. C'est pourquoi j'ai mis en place cette macro.
+## Needs
+Until now, the integration of these data was done manually. We received a folder containing 150 DPEs, opened each DPE one by one to extract the information to our Google Sheet information table.
+Although this task was basic, it proved to be extremely time-consuming. That's why I set up this macro.
 
-## Présentation de la macro
-### Tri des mails automatiques
-L'ensemble des diagnostics sont réceptionnés sur une boite mail. Il faut cependant trier les mails pour identifier uniquement les diagnostics thermiques (on ne veut pas traiter les diagnostics amiantes par exemple).
+## Presentation of the macro
+### Automatic sorting of emails
+All the diagnostics are received in a mailbox. However, it is necessary to sort the emails to identify only the thermal diagnostics (we do not want to process asbestos diagnostics, for example).
 
-Cette macro est écrite dans le fichier *Classement.js*
-Les mails sont triés suivant le nom des pièces jointes associées (les noms des fichiers sont normés, permettant l'utilisation de regex).
+This macro is written in the file *Classement.js*
+Emails are sorted according to the names of the associated attachments (the file names are standardized, allowing the use of regex).
 
-### Lecture et intégration des données
-Une fois les mails triés il faut les exploiter. C'est la macro *integration_mail.js* qui s'en charge :
+### Reading and integrating data
+Once the emails are sorted, they need to be exploited. This is handled by the *integration_mail.js* macro:
 
-1. Chargement des pièces jointes dans un dossier Google Drive spécifique pour archivage
-2. Lecture des données du fichier .xml (macro *extraction_xml.js*) et identification du logement associé
-3. Construction de la requête de mise à jour (utilisation de l'API google sheet pour des raisons de rapidité)
-4. Intégration des données
+1. Loading attachments into a specific Google Drive folder for archiving
+2. Reading the data from the .xml file (macro *extraction_xml.js*) and identifying the associated housing
+3. Constructing the update request (use of the Google Sheets API for speed reasons)
+4. Data integration
 
-## Principales problématique et défi technique à relever
-App script ne peut exécuter un script plus de 5 minutes. Les macros doivent donc être optimiser pour pouvoir s'éxécuter convenablement.
-C'est pourquoi l'ensemble des scripts limitent au maximum le nombre de requête envoyé au serveur de google, notamment sur la mise à jour des données google sheet.
+## Main problems and technical challenge to overcome
+App script cannot execute a script for more than 5 minutes. Therefore, the macros must be optimized to be able to execute properly.
+That is why all the scripts limit as much as possible the number of requests sent to the Google server, especially regarding the Google Sheets data update.
 
-
-
-
-
-
-
-
+---
