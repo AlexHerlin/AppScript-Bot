@@ -15,7 +15,9 @@ Cette tache bien que basique se révellait extremement chronophage. C'est pourqu
 ### Tri des mails automatiques
 L'ensemble des diagnostics sont réceptionnés sur une boite mail. Il faut cependant trier les mails pour identifier uniquement les diagnostics thermiques (on ne veut pas traiter les diagnostics amiantes par exemple).
 
-Cette macro est écrite dans le fichier [Classement.js](docs/Classement.js)
+Cette macro est écrite dans le fichier *Classement.js*
+Les mails sont triés suivant le nom des pièces jointes associées (les noms des fichiers sont normés, permettant l'utilisation de regex).
+
 
 
 
