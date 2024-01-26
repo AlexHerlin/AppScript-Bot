@@ -18,6 +18,22 @@ L'ensemble des diagnostics sont réceptionnés sur une boite mail. Il faut cepen
 Cette macro est écrite dans le fichier *Classement.js*
 Les mails sont triés suivant le nom des pièces jointes associées (les noms des fichiers sont normés, permettant l'utilisation de regex).
 
+### Lecture et intégration des données
+Une fois les mails triés il faut les exploiter. C'est la macro *integration_mail.js* qui s'en charge :
+
+1. Chargement des pièces jointes dans un dossier Google Drive spécifique pour archivage
+2. Lecture des données du fichier .xml (macro *extraction_xml.js*) et identification du logement associé
+3. Construction de la requête de mise à jour (utilisation de l'API google sheet pour des raisons de rapidité)
+4. Intégration des données
+
+## Principales problématique et défi technique à relever
+App script ne peut exécuter un script plus de 5 minutes. Les macros doivent donc être optimiser pour pouvoir s'éxécuter convenablement.
+C'est pourquoi l'ensemble des scripts limitent au maximum le nombre de requête envoyé au serveur de google, notamment sur la mise à jour des données google sheet.
+
+
+
+
+
 
 
 
