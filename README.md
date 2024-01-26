@@ -8,7 +8,14 @@ Ces DPE se présentent sous deux formes :
 - un format .xml destiné à l'exploitation des données (notamment à destination de l'[ADEME](https://observatoire-dpe-audit.ademe.fr/accueil)
 
 ## Besoin
-L'intégration de ces données se faisaient manuellement jusqu'alors. Nous recevions un dossier contenant 150 DPE, ouvrions chaque DPE uns à uns pour extraire les information vers notre table d'information Google Sheet.
+L'intégration de ces données se faisaient manuellement jusqu'alors. Nous recevions un dossier contenant 150 DPE, ouvrions chaque DPE uns à uns pour extraire les information vers notre table d'information Google Sheet. 
+Cette tache bien que basique se révellait extremement chronophage. C'est pourquoi j'ai mis en place cette macro.
+
+## Présentation de la macro
+### Tri des mails automatiques
+L'ensemble des diagnostics sont réceptionnés sur une boite mail. Il faut cependant trier les mails pour identifier uniquement les diagnostics thermiques (on ne veut pas traiter les diagnostics amiantes par exemple).
+
+Cette macro est écrite dans le fichier [Classement.js](docs/Classement.js)
 
 
 
