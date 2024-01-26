@@ -5,9 +5,9 @@ L'opération Rénov' Makers vise à **réhabiliter 6000 logements en deux ans**.
 
 Ces DPE se présentent sous deux formes :
 - un format .pdf destiné aux particuliers
-- un format .xml destiné à l'exploitation des données (notamment à destination de l'[ADEME](https://observatoire-dpe-audit.ademe.fr/accueil)
+- un format .xml destiné à l'exploitation des données (notamment à destination de l'[ADEME](https://observatoire-dpe-audit.ademe.fr/accueil))
 
-## Besoin
+## Besoins
 L'intégration de ces données se faisaient manuellement jusqu'alors. Nous recevions un dossier contenant 150 DPE, ouvrions chaque DPE uns à uns pour extraire les information vers notre table d'information Google Sheet. 
 Cette tache bien que basique se révellait extremement chronophage. C'est pourquoi j'ai mis en place cette macro.
 
