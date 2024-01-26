@@ -1,7 +1,7 @@
 function traitementMail () {
 
   //RECUPERATION DES FEUILLES DE CALCUL
-  const SPREADSHEET_ID = '1xxYrCK0oWSEW3tyoyCMPrvT8Ci7LTybcmUfI2cT4KzI'
+  const SPREADSHEET_ID = 'SPREADSHEET_ID'
   const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
   const sheetDonneesPatrimoine = spreadsheet.getSheetByName('Données Clésence');
   const sheetReceptionDPE = spreadsheet.getSheetByName('Réception DPE');
@@ -12,7 +12,7 @@ function traitementMail () {
   Logger.log('Récupération de la liste des codes patrimoines effectuée.')
 
   //DOSSIER PDF -- 3 - Diagnostics / 1 - DPE / 1- DPE PDF / 0 - IMPORTATION DES PDF
-  var dossierPDF = DriveApp.getFolderById('10WIFXtyWwDitmgO1qtJ5JgK4sxhWpxOo');
+  var dossierPDF = DriveApp.getFolderById('FOLDER_ID');
 
   //RECUPERATION DES MESSAGE NON LUS
   const threads = GmailApp.search('is:unread label:"DIAGNOSTICS/DIAGS THERMIQUE"');
